@@ -1,0 +1,106 @@
+{% load static %}
+<html>
+<head>
+<title>Manage Your Tasks</title>
+<style>
+  
+body
+
+{
+    font-family:  sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(PeachPuff,LightSalmon);
+    }
+
+	.exit{
+  padding: 5px 10px;
+  position:absolute;
+  top:8px;
+  left:16px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #281500;
+  border: none;
+  border-radius: 15px;
+  float:left;
+  margin-bottom:100px;
+  box-shadow: 0 9px #fff;
+}
+
+.exit:hover {background-color: #d67229;
+}
+
+.exit:active {
+
+  box-shadow: 0 5px #d67229;
+  transform: translateY(4px);
+}
+ .tasks{
+  padding: 15px 25px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #c95b0c;
+  border: none;
+  border-radius: 13px;
+  box-shadow: 0 9px #fff;
+}
+
+.tasks:hover {background-color: #d67229;
+} 
+
+.tasks:active {
+
+  box-shadow: 0 5px #d67229;
+  transform: translateY(4px);
+}
+.left {
+  position: absolute;
+  top: 50;
+  left: 0;
+  padding:30px
+}
+.right{
+  position: absolute;
+  top: 50;
+  right: 0;
+  padding:30px 
+}
+</style>
+</head>
+<div class="id1">
+  <body style="background-color:#f1d6c2">
+    <center><br>
+      <h1>List of chores</h1>
+      <img src="https://www.independent.com/wp-content/uploads/2020/07/Screen-Shot-2020-07-08-at-7.43.17-AM.png" height="400cm" width="500cm"></br>
+    </center>
+<div class="right">
+{% if user.is_authenticated %}
+<h2>Hello,{{user.first_name}}</h2>
+<li><a href="/"><button class="tasks">Logout</button></li>
+{% else %}
+  <ul>
+    <li><a href="login"><button class="tasks">Login</button></li>
+  </ul>
+{% endif %}
+</div>
+<div>
+  <center>
+  <li><a href="tasks/list">
+    <button class="tasks">Add your list</button>
+  </a></li>
+</div>
+</center>
+<div class="left">
+  <h1><em>Map out your workflow,</em></h1>
+  <h1><em>from ideas to action</em></h1>
+</div>
+</div>
+</body>
+</html>

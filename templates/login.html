@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>Manage Your Tasks</title>
+<style>
+  
+body
+
+{
+    font-family:  sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+	.exit{
+  padding: 5px 10px;
+  position:absolute;
+  top:8px;
+  left:16px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #281500;
+  border: none;
+  border-radius: 15px;
+  float:left;
+  margin-bottom:100px;
+  box-shadow: 0 9px #fff;
+}
+
+.exit:hover {background-color: #d67229;
+}
+
+.exit:active {
+
+  box-shadow: 0 5px #d67229;
+  transform: translateY(4px);
+}
+ .tasks{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #c95b0c;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #fff;
+}
+
+.tasks:hover {background-color: #d67229;
+}
+
+.tasks:active {
+
+  box-shadow: 0 5px #d67229;
+  transform: translateY(4px);
+}
+.rightl {
+    position: absolute;
+    top: 350;
+    right: 0;
+    padding:100px
+  }
+.right {
+  position: absolute;
+  top: 50;
+  right: 0;
+  padding:30px
+}
+*{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        height: 100%;
+    }
+    body{
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        height: 100%;
+    }
+    .wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:#f1d6c2 ;
+    }
+    .login-form{
+        width: 350px;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        padding: 2rem;
+        background: #ffe6e6;
+    }
+    .form-input{
+        background: #fafafa;
+        border: 1px solid #eeeeee;
+        padding: 12px;
+        width: 100%;
+    }
+    .form-group{
+        margin-bottom: 1rem;
+    }
+    .form-button{
+        background: peru;
+        border: 1px solid #ddd;
+        color: #ffffff;
+        padding: 10px;
+        width: 100%;
+        text-transform: uppercase;
+    }
+    .form-button:hover{
+        background: #d67229;
+    }
+    .form-header{
+        text-align: center;
+        margin-bottom : 2rem;
+    }
+    .form-footer{
+        text-align: center;
+    }
+</style>
+</head>
+<body style="background-image: linear-gradient(PeachPuff,LightSalmon);"> 
+<div class="wrap">
+        <form class="login-form" action="" method='POST'> {%csrf_token%}
+            <div class="form-header">
+                <h3>Login Form</h3>
+            </div>
+            <div class="form-group">
+                <input type="text" name="username" class="form-input" placeholder="username">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-input" placeholder="password">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="form-button" value="Login" />
+            </div>
+            <div class="form-footer">
+            Don't have an account? <a href="signup">Sign Up</a>
+            </div>
+        </form>
+    </div>
+    <div class="rightl">
+        {%for message in messages%}
+        <h3> {{message}}</h3>
+        {% endfor %}
+    </div>
+<div class ="right">
+<li><a href="signup">
+    <button class="tasks">signup</button>
+  </a></li>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+  

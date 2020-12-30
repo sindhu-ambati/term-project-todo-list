@@ -1,0 +1,12 @@
+<body style="background-image: linear-gradient(PeachPuff,LightSalmon);">
+    <center>
+<p>Are you sure you want to delete <b>"{{item}}"?</b></p><br>
+
+<a href="{% url 'list' %}"><br> Cancel</a>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    <input type="submit" name="Confirm">
+</form>
+</center>
+</body>
